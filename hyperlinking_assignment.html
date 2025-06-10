@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Page</title>
+    <style>
+        body {
+            font-family: Arial;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+            max-width: 50%;
+        }
+
+        .nav {
+            display: flex;
+            justify-content: space-around;
+            background-color: #045d75;
+            color: white;
+            height: 50px;
+            align-items: center;
+            border-radius: 5px;
+        }
+
+        .nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .speakers {
+            display: flex;
+            justify-content: space-around;
+            margin: 10px 0;
+        }
+
+        .circle>img {
+            width: 100px;
+            height: 100px;
+            background-color: white;
+            border-radius: 50%;
+        }
+
+        .section {
+            background-color: #045d75;
+            margin-bottom: 20px;
+            margin-top: 20px;
+            padding: 20px;
+            color: white;
+            border-radius: 20px;
+            text-align: center;
+        }
+
+        .venue {
+            text-align: center;
+            color: white;
+            background-color: #045d75;
+            padding: 20px;
+            border-radius: 20px;
+            width: 60%;
+            align-items: center;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .schedule {
+            background-color: #045d75;
+            margin-bottom: 10px;
+            margin-top: 20px;
+            padding: 20px;
+            border-radius: 20px;
+            text-align: center;
+        }
+
+        .schedule h2 {
+            color: white;
+        }
+
+        .Schedule-itme {
+            background-color: aliceblue;
+            margin-bottom: 10px;
+            margin-top: 20px;
+            padding: 20px;
+            border-radius: 20px;
+            text-align: center;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="nav">
+        <a href="#speakers">Speaker</a>
+        <a href="#venue">Venue</a>
+        <a href="#schedule">Schedule</a>
+        <a href="#registration">Registration</a>
+    </div>
+
+    <br>
+
+    <!-- Speakers Section -->
+    <div class="section" id="speakers">
+        <h2>Speakers</h2>
+        <div class="speakers">
+            <div class="circle"><img src="man1.jpg" alt="Image error"></div>
+            <div class="circle"><img src="man2.jpg" alt="Image error"></div>
+            <div class="circle"><img src="woman3.jpg" alt="Image error"></div>
+        </div>
+    </div>
+
+    <!-- Venue Section -->
+    <div class="venue" id="venue">
+        <h3>Venue</h3>
+        <p>123 Conference Hall, Tech Park</p>
+    </div>
+
+    <!-- Schedule Section -->
+    <div class="schedule" id="schedule">
+        <h2>Schedule</h2>
+        <div class="Schedule-itme"><span>10:00</span> &nbsp;<span>Speech By Guest</span></div>
+        <div class="Schedule-itme"><span>11:00</span> &nbsp;<span>Panel Discussion</span></div>
+        <div class="Schedule-itme"><span>12:00</span> &nbsp;<span>Networking Break</span></div>
+        <div class="Schedule-itme"><span>13:00</span> &nbsp;<span>Lunch</span></div>
+        <div class="Schedule-itme"><span>14:00</span> &nbsp;<span>Closing Remarks</span></div>
+    </div>
+
+    <!-- Registration Placeholder -->
+    <div class="section" id="registration">
+        <h2>Registration</h2>
+        <div style="margin: 5px"><label for="firstName">First Name * </label>
+            <input type="text" id="firstName" name="firstName">
+        </div>
+        <div style="margin: 5px;"><label for="address">Address *</label>
+            <input type="text" id="address" name="address">
+        </div>
+        <div style="margin: 5px;"><label for="email">Email *</label>
+            <input type="text" id="email" name="email">
+        </div>
+        <div><button type="submit">Submit</button></div>
+    </div>
+
+</body>
+
+</html>

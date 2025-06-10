@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Alankar Shopping List</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f2f2f2;
+            padding: 20px;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .container {
+            display: flex;
+            max-width: 1000px;
+            margin: auto;
+            gap: 20px;
+        }
+
+        .cart {
+            flex: 2;
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact {
+            flex: 1;
+            background: #004d61;
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .item-wrapper {
+            position: relative;
+        }
+
+        input[type="checkbox"] {
+            display: none;
+        }
+
+        input[type="checkbox"]:checked+.item {
+            display: none;
+        }
+
+        .item {
+            display: flex;
+            align-items: center;
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 8px;
+        }
+
+        .thumbnail {
+            width: 50px;
+            height: 50px;
+
+            border-radius: 8px;
+            margin-right: 15px;
+        }
+
+        .details {
+            flex: 1;
+        }
+
+        .cross-label {
+            font-weight: bold;
+            font-size: 18px;
+            color: red;
+            cursor: pointer;
+            margin-left: 10px;
+        }
+
+        .coupon {
+            margin-top: 20px;
+            display: flex;
+            gap: 10px;
+        }
+
+        .coupon input {
+            flex: 1;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .coupon button {
+            padding: 8px 12px;
+            background: black;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .bill {
+            margin-top: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 8px;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .continue-btn {
+            margin-top: 20px;
+            width: 100%;
+            padding: 10px;
+            background: black;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Alankar Shopping List</h2>
+    <div class="container">
+        <!-- Cart Section -->
+        <div class="cart">
+
+            <!-- Item 1 -->
+            <div class="item-wrapper">
+                <input type="checkbox" id="remove1">
+                <div class="item">
+                    <div class="thumbnail"><img src="golden-border.jpg" height="60px"></div>
+                    <div class="details">
+                        <strong>Lehenga</strong><br>
+                        <small>Golden border</small><br>
+                        <small>Rs. 25,000/- x 1</small>
+                    </div>
+                    <label for="remove1" class="cross-label">❌</label>
+                </div>
+            </div>
+
+            <!-- Item 2 -->
+            <div class="item-wrapper">
+                <input type="checkbox" id="remove2">
+                <div class="item">
+                    <div class="thumbnail"><img src="golden-border.jpg" height="60px"></div>
+                    <div class="details">
+                        <strong>Lehenga</strong><br>
+                        <small>Golden border</small><br>
+                        <small>Rs. 25,000/- x 1</small>
+                    </div>
+                    <label for="remove2" class="cross-label">❌</label>
+                </div>
+            </div>
+
+            <!-- Item 3 -->
+            <div class="item-wrapper">
+                <input type="checkbox" id="remove3">
+                <div class="item">
+                    <div class="thumbnail"><img src="golden-border.jpg " height="60px"></div>
+                    <div class="details">
+                        <strong>Lehenga</strong><br>
+                        <small>Golden border</small><br>
+                        <small>Rs. 25,000/- x 1</small>
+                    </div>
+                    <label for="remove3" class="cross-label">❌</label>
+                </div>
+            </div>
+
+            <!-- Coupon Section -->
+            <div class="coupon">
+                <input type="text" placeholder="Enter Coupon Code">
+                <button>Apply Coupon</button>
+            </div>
+
+            <!-- Bill -->
+            <div class="bill">
+                <h4>Bill Details:</h4>
+                <p>Item 1 ....... Rs. 25,000</p>
+                <p>Item 2 ....... Rs. 25,000</p>
+                <p>item 3 ....... Rs. 25,000</p>
+                <p>Total......... Rs. 75,000</p>
+            </div>
+        </div>
+
+        <!-- Contact Section -->
+        <div class="contact">
+            <h3>Contact Information</h3>
+            <div class="form-group">
+                <label>First Name</label>
+                <input type="text">
+            </div>
+            <div class="form-group">
+                <input type="text" placeholder="Last Name">
+            </div>
+            <div class="form-group">
+                <input type="text" placeholder="Email / Mobile">
+            </div>
+            <button class="continue-btn">Continue</button>
+        </div>
+    </div>
+
+</body>
+
+</html>

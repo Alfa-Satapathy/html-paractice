@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Form Validation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f3f3f3;
+            padding: 20px;
+        }
+
+        .form-container {
+            max-width: 500px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .error {
+            color: red;
+            font-size: 0.9em;
+            display: none;
+        }
+
+        .form-buttons {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        button {
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        #submitBtn {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        #resetBtn {
+            background-color: #f44336;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="form-container">
+        <h2>Registration Form</h2>
+        <form id="userForm" novalidate>
+            <div class="form-group">
+                <label for="firstName">First Name * </label>
+                <input type="text" id="firstName" name="firstName">
+                <div class="error" id="firstNameError">First name is required.</div>
+            </div>
+
+            <div class="form-group">
+                <label for="lastName">Last Name * </label>
+                <input type="text" id="lastName" name="lastName">
+                <div class="error" id="lastNameError">Last name is required.</div>
+            </div>
+
+            <div class="form-group">
+                <label for="address">Address *</label>
+                <input type="text" id="address" name="address">
+                <div class="error" id="addressError">Address is required.</div>
+            </div>
+
+            <div class="form-group">
+                <label for="city">City *</label>
+                <input type="text" id="city" name="city">
+                <div class="error" id="cityError">City is required.</div>
+            </div>
+
+            <div class="form-group">
+                <label for="mobile">Mobile *</label>
+                <input type="text" id="mobile" name="mobile">
+                <div class="error" id="mobileError">Valid 10-digit mobile number is required.</div>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email *</label>
+                <input type="text" id="email" name="email">
+                <div class="error" id="emailError">Valid email is required.</div>
+            </div>
+
+            <div class="form-buttons">
+                <button type="submit" id="submitBtn">Submit</button>
+                <button type="reset" id="resetBtn">Reset</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById("userForm").addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            // Get form inputs
+            const firstName = document.getElementById("firstName");
+            const lastName = document.getElementById("lastName");
+            const address = document.getElementById("address");
+            const city = document.getElementById("city");
+            const mobile = document.getElementById("mobile");
+            const email = document.getElementById("email");
+
+            // Flags
+            let isValid = true;
+
+            // Reset all error messages
+            document.querySelectorAll(".error").forEach(el => el.style.display = "none");
+
+            // First Name
+            if (firstName.value.trim() === "") {
+                document.getElementById("firstNameError").style.display = "block";
+                isValid = false;
+            }
+
+            // Last Name
+            if (lastName.value.trim() === "") {
+                document.getElementById("lastNameError").style.display = "block";
+                isValid = false;
+            }
+
+            // Address
+            if (address.value.trim() === "") {
+                document.getElementById("addressError").style.display = "block";
+                isValid = false;
+            }
+
+            // City
+            if (city.value.trim() === "") {
+                document.getElementById("cityError").style.display = "block";
+                isValid = false;
+            }
+
+            // Mobile
+            const mobilePattern = /^[0-9]{10}$/;
+            if (!mobilePattern.test(mobile.value.trim())) {
+                document.getElementById("mobileError").style.display = "block";
+                isValid = false;
+            }
+
+            // Email
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailPattern.test(email.value.trim())) {
+                document.getElementById("emailError").style.display = "block";
+                isValid = false;
+            }
+
+            if (isValid) {
+                alert("Form submitted successfully!");
+                document.getElementById("userForm").reset();
+            }
+        });
+    </script>
+</body>
+
+</html>
